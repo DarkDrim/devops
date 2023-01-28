@@ -21,7 +21,7 @@ resource "kubernetes_deployment_v1" "app1" {
       }
       spec {
         container {
-          image = "drim/devops:1.0.1"
+          image = "drim/devops:latest"
           name  = "app1"
 
           port {
