@@ -49,7 +49,7 @@ pipeline {
 
         stage('Deploy to EKS webserver') {
             steps {
-                withKubeConfig([credentialsId: 'aws', serverUrl: 'https://F9CEB10726ACDEAAD3983AA09D035638.gr7.us-east-1.eks.amazonaws.com']) {
+                withKubeConfig([credentialsId: 'kubecfg']) {
                     sh 'kubectl apply -f deployment_app.yml'
                 }
             }
