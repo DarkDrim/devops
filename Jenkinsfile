@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage('Test'){
+            steps {
+                 echo 'Future tests..'
+            }
+        }
+
         stage('Push docker image') {
             steps {
                 script{
@@ -38,6 +44,12 @@ pipeline {
         stage('Remove Unused docker image') {
             steps{
                 sh "docker rmi $registry"
+            }
+        }
+
+        stage('Deploy to EKS webserver') {
+            steps {
+                sh 'kubectl apply -f deployment_app.yml'
             }
         }
     }
