@@ -9,5 +9,5 @@ ash:
 	docker exec -it ops ash
 
 image-push:
-	docker tag ops-img drim/devops:1.0.0
-	docker push drim/devops:1.0.0
+	docker tag ops-img drim/devops:1.0.1
+	docker push drim/devops:1.0.1
